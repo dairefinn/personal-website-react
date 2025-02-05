@@ -1,0 +1,41 @@
+@use '../assets/scss/theme';
+@use '../assets/scss/breakpoints';
+
+.app-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column-reverse;
+
+    .container-sidebar {
+        position: sticky;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .container-page {
+        flex-grow: 1;
+    }
+
+    @include breakpoints.md {
+        flex-direction: row;
+
+        .container-sidebar {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+        }
+    }
+
+    @media print {
+        display: block;
+
+        .container-sidebar {
+            display: none;
+        }
+
+        .container-page {
+            padding-top: 32px;
+            padding-bottom: 32px;
+        }
+    }
+}
