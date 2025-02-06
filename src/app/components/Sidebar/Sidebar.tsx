@@ -2,7 +2,6 @@ import "./Sidebar.scss";
 
 import { RESUME_DOWNLOAD_LINK } from "../../../data/career";
 import SidebarLink, { SidebarItemType, SidebarLinkItem } from "../SidebarLink/SidebarLink";
-import { useLocation } from "react-router";
 
 const internalLinks: SidebarLinkItem[] = [
     {
