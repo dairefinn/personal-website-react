@@ -42,7 +42,7 @@ export const projects: ProjectItem[] = [
     {
         title: 'S&Box Game Jam II entry - FarmH&',
         description: `
-            <img src="assets/images/farmhand.webp" alt="FarmH&" class="img-full-width img-rounded"/>
+            <img src="/src/assets/images/farmhand.webp" alt="FarmH&" class="img-full-width img-rounded"/>
             <br/><br/>
             S&Box is a new in-development game engine built on top of the Source 2 engine. I am working alongside a group of friends to create a game for <a href="https://sbox.game/c/gamejam2" target="_blank">S&Box's Game Jam II</a> - a farming game with a horror twist called "FarmH&". The aim of the game is to grow and sell enough Melons to buy a car and leave the sinister farmer's farm.
             <br/><br/>

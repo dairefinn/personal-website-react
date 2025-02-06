@@ -1,9 +1,9 @@
+import './Homepage.scss';
+
 import PageWrapper from "../../components/PageWrapper/PageWrapper"
 import Button from "../../components/Button/Button";
 import Card from "../../components/Card/Card";
 import { useState } from "react";
-
-import './Homepage.scss';
 
 import Headshot from "../../../assets/images/headshot.webp";
 import SimRacingSetup from "../../../assets/images/simracing-rig.webp";
