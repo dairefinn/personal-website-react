@@ -1,7 +1,7 @@
 import "./Sidebar.scss";
 
 import { RESUME_DOWNLOAD_LINK } from "../../../data/career";
-import { SidebarItemType, SidebarLinkItem } from "../SidebarLink/SidebarLink";
+import SidebarLink, { SidebarItemType, SidebarLinkItem } from "../SidebarLink/SidebarLink";
 import { useLocation } from "react-router";
 
 const internalLinks: SidebarLinkItem[] = [
@@ -68,8 +68,6 @@ const downloadLinks: SidebarLinkItem[] = [
 ];
 
 function Sidebar() {
-    const location = useLocation();
-
     return (
         <div className="container-component-sidebar">
             <div className="area-branding">
@@ -80,14 +78,7 @@ function Sidebar() {
                 <ul className="area-internal-links">
                     {internalLinks.map((sidebarItem) => {
                         return (
-                            <li key={sidebarItem.title}>
-                                <a href={sidebarItem.route} className={(location.pathname.includes(sidebarItem.route)) ? "active" : ""}>
-                                    <span className={sidebarItem.icon}></span>
-                                    <span className="navigation-link-title">
-                                        {sidebarItem.title}
-                                    </span>
-                                </a>
-                            </li>
+                            <SidebarLink key={sidebarItem.title} sidebarItem={sidebarItem} />
                         );
                     })}
                 </ul>
@@ -97,15 +88,7 @@ function Sidebar() {
                 <ul className="area-external-links">
                     {externalLinks.map((sidebarItem) => {
                         return (
-                            <li key={sidebarItem.title}>
-                                <a href={sidebarItem.route} target="_blank">
-                                    <span className={sidebarItem.icon}></span>
-                                    <span className="navigation-link-title">
-                                        {sidebarItem.title}
-                                    </span>
-                                    <span className="sidebar-type-icon fa fa-fw fa-external-link"></span>
-                                </a>
-                            </li>
+                            <SidebarLink key={sidebarItem.title} sidebarItem={sidebarItem} />
                         );
                     })}
                 </ul>
@@ -115,15 +98,7 @@ function Sidebar() {
                 <ul className="area-download-links">
                     {downloadLinks.map((sidebarItem) => {
                         return (
-                            <li key={sidebarItem.title}>
-                                <a href={sidebarItem.route} download>
-                                    <span className={sidebarItem.icon}></span>
-                                    <span className="navigation-link-title">
-                                        {sidebarItem.title}
-                                    </span>
-                                    <span className="sidebar-type-icon fa fa-fw fa-download"></span>
-                                </a>
-                            </li>
+                            <SidebarLink key={sidebarItem.title} sidebarItem={sidebarItem} />
                         );
                     })}
                 </ul>

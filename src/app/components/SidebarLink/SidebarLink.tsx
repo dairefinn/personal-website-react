@@ -14,7 +14,11 @@ export interface SidebarLinkItem {
     itemType: SidebarItemType;
 }
 
-function SidebarLink(sidebarItem: SidebarLinkItem) {
+interface SidebarLinkProps {
+    sidebarItem: SidebarLinkItem;
+}
+
+function SidebarLink({ sidebarItem }: SidebarLinkProps) {
     if (!sidebarItem) return null;
 
     const LINK_INNER_CONTENT = () => (
@@ -44,11 +48,9 @@ function SidebarLink(sidebarItem: SidebarLinkItem) {
                         )
                     case SidebarItemType.INTERNAL:
                         return (
-                            <div>Temp</div>
-                            // TODO: Figure out routing and lazy-loading
-                            // <a routerLink={sidebarItem.route} routerLinkActive="active">
-                            //     { LINK_INNER_CONTENT() }
-                            // </a>
+                            <a href={sidebarItem.route} className={(location.pathname.includes(sidebarItem.route)) ? "active" : ""}>
+                                { LINK_INNER_CONTENT() }
+                            </a>
                         )
                     case SidebarItemType.DOWNLOAD:
                         return (
