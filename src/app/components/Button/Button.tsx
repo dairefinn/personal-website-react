@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react'
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import './Button.scss'
 
 interface ButtonProps {
@@ -17,6 +17,8 @@ function Button({
     onClick,
     children
 }: PropsWithChildren<ButtonProps>) {
+    const navigate = useNavigate();
+    const location = useLocation();
     
     const onClickInner = () => {
         if (onClick) {
@@ -25,16 +27,14 @@ function Button({
         }
 
         if (route) {
-            console.info("Navigating to route: ", route);
-            let navigate = useNavigate();
             navigate(route);
         }
     };
 
+    const isActive = route && location.pathname === route;
+
     return (
-        <div className={ "container-component-button"  +  (disabled ? "disabled" : "")} onClick={disabled ? undefined : onClickInner} title={title}>
-            {/* TODO: Figure out how to implement route navigation and/or lazy-loading */}
-            {/* routerLinkActive="active" [routerLink]="actionIsRoute ? route : undefined" */}
+        <div className={ "container-component-button"  +  (disabled ? " disabled" : "") + (isActive ? " active" : "")} onClick={disabled ? undefined : onClickInner} title={title}>
             {children}
         </div>
     )

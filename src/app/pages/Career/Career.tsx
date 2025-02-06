@@ -7,6 +7,9 @@ import NavigationTabs from '../../components/NavigationTabs/NavigationTabs';
 import { RESUME_DOWNLOAD_LINK } from '../../../data/career';
 import { NavigationTabOption } from '../../components/NavigationTabs/NavigationTabs';
 import { PropsWithChildren } from 'react';
+import { Routes, Route } from "react-router";
+import CareerHistory from '../CareerHistory/CareerHistory';
+import CareerTechnology from '../CareerTechnology/CareerTechnology';
 
 const optionsNavigation: NavigationTabOption[] = [
   // {
@@ -15,15 +18,19 @@ const optionsNavigation: NavigationTabOption[] = [
   // },
   {
     label: 'History',
-    route: 'history'
+    route: '/career/history'
   },
   {
     label: 'Technologies',
-    route: 'technologies'
+    route: '/career/technologies'
   }
 ];
 
-function Career({ children }: PropsWithChildren<{}>) {
+function Career() {
+    if (window.location.pathname.endsWith('/career')) {
+        window.location.href = window.location.pathname + '/history';
+        return null;
+    }
 
     const isOnPageCV: boolean = window.location.pathname.endsWith('/overview');
     
@@ -48,7 +55,10 @@ function Career({ children }: PropsWithChildren<{}>) {
                         </Button>
                     </div>
 
-                    {children}
+                    <Routes>
+                        <Route path="history" element={<CareerHistory />} />
+                        <Route path="technologies" element={<CareerTechnology />} />
+                    </Routes>
                 </PageWrapper>
             </div>
         </>

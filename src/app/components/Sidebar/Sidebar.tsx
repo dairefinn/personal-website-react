@@ -1,6 +1,8 @@
 import "./Sidebar.scss";
+
 import { RESUME_DOWNLOAD_LINK } from "../../../data/career";
 import { SidebarItemType, SidebarLinkItem } from "../SidebarLink/SidebarLink";
+import { useLocation } from "react-router";
 
 const internalLinks: SidebarLinkItem[] = [
     {
@@ -66,6 +68,8 @@ const downloadLinks: SidebarLinkItem[] = [
 ];
 
 function Sidebar() {
+    const location = useLocation();
+
     return (
         <div className="container-component-sidebar">
             <div className="area-branding">
@@ -77,7 +81,7 @@ function Sidebar() {
                     {internalLinks.map((sidebarItem) => {
                         return (
                             <li key={sidebarItem.title}>
-                                <a href={sidebarItem.route}>
+                                <a href={sidebarItem.route} className={(location.pathname.includes(sidebarItem.route)) ? "active" : ""}>
                                     <span className={sidebarItem.icon}></span>
                                     <span className="navigation-link-title">
                                         {sidebarItem.title}

@@ -10,7 +10,7 @@ interface TechnologyProps {
 function Technology({ technology }: TechnologyProps) {
     if (!technology) return null;
 
-    const [showExperience, setShowExperience] = useState(false);
+    const [showExperience, setShowExperience] = useState(true);
 
     const toggleShowExperience = () => {
         setShowExperience(!showExperience);

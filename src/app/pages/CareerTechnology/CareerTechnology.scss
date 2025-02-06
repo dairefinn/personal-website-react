@@ -1,0 +1,10 @@
+@use '../../../assets/scss/theme';
+@use '../../../assets/scss/breakpoints';
+
+.container-component-technology {
+    .area-technology-entries-list {
+        display: flex;
+        flex-direction: column;
+        gap: 64px;
+    }
+}

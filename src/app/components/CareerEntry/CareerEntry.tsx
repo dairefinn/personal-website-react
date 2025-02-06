@@ -4,15 +4,15 @@ import { CareerEntryItem, CareerEntryType } from '../../../data/career';
 
 interface CareerEntryProps {
     careerEntry?: CareerEntryItem;
-    showDate: boolean
+    showDate?: boolean
 }
 
-function CareerEntry({ showDate = true, careerEntry }: CareerEntryProps) {
+function CareerEntry({ showDate = false, careerEntry }: CareerEntryProps) {
     if (!careerEntry) return null;
 
     return (
         <div className="container-component-career-entry">
-            <div className="display-career-item-date-mobile">{new Date(careerEntry.startDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</div>
+            {showDate && (<div className="display-career-item-date-mobile">{new Date(careerEntry.startDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</div>)}
             <div className="display-career-item-title">
                 {(() => {
                     switch (careerEntry.type) {
