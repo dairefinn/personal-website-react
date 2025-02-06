@@ -6,3 +6,4 @@ This serves as a learning experience for me to familiarize myself with React, ha
 
 ## TODO:
 - [] Figure out how to get SCSS import shortening working so I don't have to type the full relative path to the file for every import
+- [] Hover and active effects on sidebar links

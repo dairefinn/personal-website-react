@@ -1,4 +1,4 @@
-export enum Tag {
+export enum TagEntry {
     WEB_DEV = 'Web dev',
     GAME_DEV = 'Game dev',
     DEV_OPS = 'DevOps',

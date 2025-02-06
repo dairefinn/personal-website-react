@@ -3,6 +3,7 @@ import './Projects.scss';
 import { projects, ProjectStatus } from '../../../data/projects';
 
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
+import Tag from '../../components/Tag/Tag';
 
 function Projects() {
     document.title = "Daire Finn / Projects";
@@ -45,8 +46,7 @@ function Projects() {
                                     {projectItem.tags && projectItem.tags.length > 0 && (
                                         <div className="display-project-item-tags">
                                             {projectItem.tags.map((tagItem) => {
-                                                return (<div>TODO: Tags</div>);
-                                                // <app-tag [tag]="tagItem"></app-tag>
+                                                return (<Tag tag={tagItem} />);
                                             })}
                                         </div>
                                     )}

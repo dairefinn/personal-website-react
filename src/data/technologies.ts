@@ -1,4 +1,4 @@
-import { Tag } from "./tag";
+import { TagEntry } from "./tag";
 
 export interface TechnologyItemExperience {
     title: string;
@@ -8,7 +8,7 @@ export interface TechnologyItemExperience {
 export interface TechnologyItem {
     title: string;
     experience: TechnologyItemExperience[];
-    tags: Tag[];
+    tags: TagEntry[];
 }
 
 export const technologyEntries: TechnologyItem[] = [
@@ -28,7 +28,7 @@ export const technologyEntries: TechnologyItem[] = [
                 description: 'Angular was the first front-end framework we learned in college.'
             }
         ],
-        tags: [Tag.FRAMEWORK, Tag.WEB_DEV, Tag.FRONT_END]
+        tags: [TagEntry.FRAMEWORK, TagEntry.WEB_DEV, TagEntry.FRONT_END]
     },
     {
         title: 'TypeScript, Javascript',
@@ -38,7 +38,7 @@ export const technologyEntries: TechnologyItem[] = [
                 description: 'I modified the tsconfig to make it stricter and added linting rules to ensure we were writing consistent code. I also added some shorthands for directories to make imports easier.'
             },
         ],
-        tags: [Tag.LANGUAGE, Tag.WEB_DEV, Tag.FRONT_END]
+        tags: [TagEntry.LANGUAGE, TagEntry.WEB_DEV, TagEntry.FRONT_END]
     },
     {
         title: 'CSS, SCSS',
@@ -52,7 +52,7 @@ export const technologyEntries: TechnologyItem[] = [
                 description: 'This website uses SCSS. It should be fully responsive and work on all modern browsers.'
             },
         ],
-        tags: [Tag.FRONT_END, Tag.WEB_DEV, Tag.DESIGN, Tag.UI_UX]
+        tags: [TagEntry.FRONT_END, TagEntry.WEB_DEV, TagEntry.DESIGN, TagEntry.UI_UX]
     },
     {
         title: 'Java, Spring Boot',
@@ -62,7 +62,7 @@ export const technologyEntries: TechnologyItem[] = [
                 description: 'The back-end of the application was developed in Java using Spring Boot and Maven. I have added plenty of features to the back-end and have a deep understanding of the architecture.'
             }
         ],
-        tags: [Tag.BACK_END, Tag.LANGUAGE]
+        tags: [TagEntry.BACK_END, TagEntry.LANGUAGE]
     },
     {
         title: 'MySQL, SQL Server',
@@ -76,7 +76,7 @@ export const technologyEntries: TechnologyItem[] = [
                 description: 'We learned SQL Server in college across multiple modules.'
             }
         ],
-        tags: [Tag.DATABASE_MANAGEMENT]
+        tags: [TagEntry.DATABASE_MANAGEMENT]
     },
     {
         title: 'Git, Bitbucket',
@@ -90,7 +90,7 @@ export const technologyEntries: TechnologyItem[] = [
                 description: 'I use git for all my personal projects.'
             },
         ],
-        tags: [Tag.SOURCE_CONTROL]
+        tags: [TagEntry.SOURCE_CONTROL]
     },
     {
         title: 'Bitbucket Pipelines, GitHub Actions',
@@ -104,7 +104,7 @@ export const technologyEntries: TechnologyItem[] = [
                 description: 'I use GitHub Actions for this website.'
             }
         ],
-        tags: [Tag.DEV_OPS]
+        tags: [TagEntry.DEV_OPS]
     },
     {
         title: 'Docker',
@@ -118,7 +118,7 @@ export const technologyEntries: TechnologyItem[] = [
                 description: 'One of my first projects was a fork of a docker image which was used to sync movie lists between two instances of the same service. My fork has almost 700k downloads as of writing.'
             }
         ],
-        tags: [Tag.CONTAINERS]
+        tags: [TagEntry.CONTAINERS]
     },
     {
         title: 'Shell Scripting and the Terminal',
@@ -136,7 +136,7 @@ export const technologyEntries: TechnologyItem[] = [
                 description: 'We had a module on shell scripting where we learned the basics.'
             }
         ],
-        tags: [Tag.SHELL]
+        tags: [TagEntry.SHELL]
     },
     {
         title: 'AWS, Azure, Google Cloud',
@@ -154,7 +154,7 @@ export const technologyEntries: TechnologyItem[] = [
                 description: 'We received several AWS certifications. We also used Azure and Google Cloud for some group projects.'
             }
         ],
-        tags: [Tag.DEV_OPS, Tag.CLOUD_INFRASTRUCTURE]
+        tags: [TagEntry.DEV_OPS, TagEntry.CLOUD_INFRASTRUCTURE]
     },
     {
         title: 'CloudFlare, Route53, GoDaddy, Namecheap',
@@ -168,7 +168,7 @@ export const technologyEntries: TechnologyItem[] = [
                 description: 'I use CloudFlare for this website. I have added records to support email forwarding and created a subdomains which my friends can use to join any video game servers I host locally.'
             }
         ],
-        tags: [Tag.CLOUD_INFRASTRUCTURE]
+        tags: [TagEntry.CLOUD_INFRASTRUCTURE]
     },
     {
         title: 'Jira, GitHub Issues, Trello, Atlas',
@@ -182,7 +182,7 @@ export const technologyEntries: TechnologyItem[] = [
                 description: 'We used Trello and GitHub issues for some team projects.'
             }
         ],
-        tags: [Tag.PROJECT_MANAGEMENT]
+        tags: [TagEntry.PROJECT_MANAGEMENT]
     },
     {
         title: 'Figma, Adobe XD',
@@ -196,6 +196,6 @@ export const technologyEntries: TechnologyItem[] = [
                 description: 'I used XD for some college projects, mainly a large group project that we had to do in third year.'
             }
         ],
-        tags: [Tag.DESIGN, Tag.UI_UX]
+        tags: [TagEntry.DESIGN, TagEntry.UI_UX]
     }
 ]

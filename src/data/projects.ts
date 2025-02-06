@@ -1,4 +1,4 @@
-import { Tag } from "./tag";
+import { TagEntry } from "./tag";
 
 export enum ProjectStatus {
     ACTIVE = 'Active',
@@ -9,7 +9,7 @@ export enum ProjectStatus {
 export type ProjectItem = {
     title: string;
     description: string;
-    tags: Tag[];
+    tags: TagEntry[];
     startDate?: Date;
     link?: string;
     isFeatured?: boolean;
@@ -17,6 +17,20 @@ export type ProjectItem = {
 }
 
 export const projects: ProjectItem[] = [
+    {
+        title: 'This website but in React using Vite',
+        description: `
+            During my job search, I noticed that a lot of companies were using React instead of Angular. Having used some React previously and Expo heavily for my college third year project, I've always known that they were similar but I wanted to get some more experience with React incase there were any recent changes that I was unaware of.
+            <br/><br/>
+            I decided the best way to do this would be to recreate this website in React. The React documentation suggests using a framework when setting up new projects so I asked some of my friends who work with React professionally which one they would recommend. They all suggested Vite so I went with that.
+            <br/><br/>
+            I was pleasantly surprised at how fast I got everything converted over. The only real issue I had was with the routing. Angular has a bunch of built in features that make routing easy but React requires you to use a library. I set up React Router and got everything working as expected.
+            `,
+        tags: [TagEntry.WEB_DEV],
+        link: 'https://github.com/dairefinn/personal-website-vite',
+        startDate: new Date('2025-02-06'),
+        status: ProjectStatus.COMPLETED
+    },
     {
         title: 'Lorekeeper fork',
         description: `
@@ -34,7 +48,7 @@ export const projects: ProjectItem[] = [
             <br/><br/>
             We've recently incorporated some closed source extensions so any of the latest changes will not be visible in the public repository, which only contains my personal modifications before the extensions were added.
             `,
-        tags: [Tag.GAME_DEV, Tag.WEB_DEV],
+        tags: [TagEntry.GAME_DEV, TagEntry.WEB_DEV],
         link: 'https://github.com/dairefinn/lorekeeper',
         startDate: new Date('2024-09-14'),
         status: ProjectStatus.ACTIVE
@@ -59,7 +73,7 @@ export const projects: ProjectItem[] = [
             </ul>
             The game logic is written in C# and the UI is Razor and SCSS. S&Box is still in it's developer preview so the documentation is sparse and there are very few examples to learn from. This has been a fun challenge so far and we've made good progress by reverse engineering the parts of the engine that are exposed and looking at some existing projects.
             `,
-        tags: [Tag.GAME_DEV],
+        tags: [TagEntry.GAME_DEV],
         startDate: new Date('2024-08-16'),
         status: ProjectStatus.INACTIVE
     },
@@ -72,7 +86,7 @@ export const projects: ProjectItem[] = [
             <br/><br/>
             This script is used to quickly toggle between the two connections, ensuring that all programs switch over to the new connection.
             `,
-        tags: [Tag.SHELL, Tag.NETWORKING],
+        tags: [TagEntry.SHELL, TagEntry.NETWORKING],
         link: 'https://github.com/dairefinn/windows-script-wlan-wifi-toggle',
         startDate: new Date('2024-08-08'),
         status: ProjectStatus.COMPLETED
@@ -90,7 +104,7 @@ export const projects: ProjectItem[] = [
             <br/><br/>
             Now the site works perfectly and I can push changes to it by simply pushing to the master branch. On top of that, the hosting is 100% free.
             `,
-        tags: [Tag.WEB_DEV, Tag.DEV_OPS],
+        tags: [TagEntry.WEB_DEV, TagEntry.DEV_OPS],
         link: 'https://github.com/dairefinn/dairefinn.github.io',
         startDate: new Date('2024-07-29'),
         status: ProjectStatus.ACTIVE
@@ -110,7 +124,7 @@ export const projects: ProjectItem[] = [
             <br/><br/>
             Update: I no longer need this set up as we have had a line installed to our house and I can now port forward without issue.
             `,
-        tags: [Tag.NETWORKING],
+        tags: [TagEntry.NETWORKING],
         link: undefined,
         startDate: new Date('2024-07-29'),
         status: ProjectStatus.COMPLETED
@@ -133,7 +147,7 @@ export const projects: ProjectItem[] = [
             </ul>
             The game logic code is written in C#. The visuals either using primitive shapes or free assets from Itch.io.
             `,
-        tags: [Tag.GAME_DEV],
+        tags: [TagEntry.GAME_DEV],
         link: 'https://github.com/dairefinn/sneak-game',
         startDate: new Date('2024-01-02'),
         status: ProjectStatus.ACTIVE
@@ -145,7 +159,7 @@ export const projects: ProjectItem[] = [
             <br/><br/>
             When a user posts a certain command in chat, the bot will join the voice channel they are in and play a preset sound.
             `,
-        tags: [Tag.WEB_DEV],
+        tags: [TagEntry.WEB_DEV],
         link: 'https://github.com/dairefinn/discord-bot',
         startDate: new Date('2023-10-26'),
         status: ProjectStatus.INACTIVE
@@ -161,7 +175,7 @@ export const projects: ProjectItem[] = [
             <br/><br/>
             This was extremely useful at the time but I haven't used the service since I recovered and I'm sure that their filtering has improved since then.
             `,
-        tags: [Tag.WEB_DEV],
+        tags: [TagEntry.WEB_DEV],
         link: 'https://github.com/dairefinn/geforce-now-searcher',
         startDate: new Date('2021-12-05'),
         status: ProjectStatus.COMPLETED
@@ -177,7 +191,7 @@ export const projects: ProjectItem[] = [
             <br/><br/>
             I have acquired access to the sequel\'s developer preview so I'd like to continue this project for that game instead.
             `,
-        tags: [Tag.GAME_DEV],
+        tags: [TagEntry.GAME_DEV],
         link: 'https://github.com/dairefinn/slope_v2',
         startDate: new Date('2020-09-30'),
         status: ProjectStatus.INACTIVE
@@ -193,7 +207,7 @@ export const projects: ProjectItem[] = [
             <br/><br/>
             I use this almost every day and it has saved me a lot of time. As an added bonus, I have all my workspaces saved in a git repository so I can easily add them to a new machine.
             `,
-        tags: [Tag.SHELL],
+        tags: [TagEntry.SHELL],
         link: 'https://github.com/dairefinn/workspace-function',
         startDate: new Date('2020-05-19'),
         status: ProjectStatus.COMPLETED
@@ -207,7 +221,7 @@ export const projects: ProjectItem[] = [
             <br/><br/>
             My version is available publicly on docker hub and has almost 700k downloads as of writing.
             `,
-        tags: [Tag.CONTAINERS, Tag.SOURCE_CONTROL],
+        tags: [TagEntry.CONTAINERS, TagEntry.SOURCE_CONTROL],
         link: 'https://github.com/dairefinn/RadarrSync',
         startDate: new Date('2019-02-17'),
         status: ProjectStatus.COMPLETED
