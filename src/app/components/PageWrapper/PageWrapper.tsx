@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react'
-import './Card.scss'
+import './PageWrapper.scss'
 
 function PageWrapper(props: PropsWithChildren<{}>) {
     return (

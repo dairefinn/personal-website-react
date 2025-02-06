@@ -1,5 +1,6 @@
 import './App.scss'
 import Sidebar from './components/Sidebar/Sidebar'
+import Homepage from './pages/Homepage/Homepage'
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       </div>
       <div className="container-page">
         {/* <router-outlet></router-outlet> */}
+        <Homepage />
       </div>
     </div>
   )
