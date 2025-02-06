@@ -1,5 +1,32 @@
 @use './assets/scss/theme';
 @use './assets/scss/breakpoints';
+@use './assets/scss/headings';
+@use './assets/scss/images';
+@use './assets/scss/alignment';
+@use './assets/scss/text';
+@use './assets/scss/printing';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: theme.$gray-500;
+  color: theme.$white-200;
+  font-family: Segoe UI,Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
+  position: relative;
+
+  a {
+    color: theme.$white-300;
+  }
+
+  .clickable {
+    cursor: pointer;
+  }
+}
 
 .app-wrapper {
     min-height: 100vh;

@@ -1,3 +1,4 @@
+import Button from '../Button/Button';
 import './NavigationTabs.scss';
 
 export interface NavigationTabOption {
@@ -11,9 +12,16 @@ interface NavigationTabsProps {
 
 function NavigationTabs({ options }: NavigationTabsProps) {
     return (
-        <>
-            <div>TODO: NavigationTabs</div>
-        </>
+        <div className="container-component-navigation-tabs">
+            {options.map(option => {
+                return (
+                    <Button key={option.route} route={option.route}>
+                        <span>{option.label}</span>
+                    </Button>
+                )
+            })}
+        </div>
+
     )
 }
 

@@ -14,7 +14,7 @@ function Projects() {
                 <PageWrapper>
                     <div className="area-project-entries-list">
                         {projects.map((projectItem) => (
-                            <div className="display-project-item print-whole">
+                            <div key={projectItem.title} className="display-project-item print-whole">
                                 <div className="display-project-item-date">
                                     <span>{projectItem.startDate ? new Date(projectItem.startDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }) : 'No date available'}</span>
                                 </div>
@@ -46,7 +46,7 @@ function Projects() {
                                     {projectItem.tags && projectItem.tags.length > 0 && (
                                         <div className="display-project-item-tags">
                                             {projectItem.tags.map((tagItem) => {
-                                                return (<Tag tag={tagItem} />);
+                                                return (<Tag key={tagItem} tag={tagItem} />);
                                             })}
                                         </div>
                                     )}

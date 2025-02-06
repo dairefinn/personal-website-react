@@ -6,6 +6,7 @@ import NavigationTabs from '../../components/NavigationTabs/NavigationTabs';
 
 import { RESUME_DOWNLOAD_LINK } from '../../../data/career';
 import { NavigationTabOption } from '../../components/NavigationTabs/NavigationTabs';
+import { PropsWithChildren } from 'react';
 
 const optionsNavigation: NavigationTabOption[] = [
   // {
@@ -22,10 +23,10 @@ const optionsNavigation: NavigationTabOption[] = [
   }
 ];
 
-function Career() {
+function Career({ children }: PropsWithChildren<{}>) {
 
-    const isOnPageCV: boolean = false; // TODO: Implement this, in Angular it was `return this.router.url.endsWith('/overview');`
-
+    const isOnPageCV: boolean = window.location.pathname.endsWith('/overview');
+    
     const downloadResume = () => {
         window.open(RESUME_DOWNLOAD_LINK, '_blank');
     }
@@ -47,8 +48,7 @@ function Career() {
                         </Button>
                     </div>
 
-                    {/* TODO: Implement this */}
-                    {/* <router-outlet/> */}
+                    {children}
                 </PageWrapper>
             </div>
         </>

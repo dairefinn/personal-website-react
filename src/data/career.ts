@@ -4,7 +4,7 @@ export enum CareerEntryType {
   POSITION = 'Position',
 }
 
-export type CareerEntry = {
+export type CareerEntryItem = {
   type: CareerEntryType;
   title: string;
   description?: string;
@@ -17,7 +17,7 @@ export type CareerEntry = {
 
 export const RESUME_DOWNLOAD_LINK = '/src/assets/docs/resume-dairefinn-public.pdf';
 
-export const careerEntriesEvents: CareerEntry[] = [
+export const careerEntriesEvents: CareerEntryItem[] = [
   {
     type: CareerEntryType.EVENT,
     title: 'Started BSc Honours in Computing',
@@ -76,7 +76,7 @@ export const careerEntriesEvents: CareerEntry[] = [
   },
 ].sort((a, b) => b.startDate?.getTime() - a.startDate?.getTime());
 
-export const careerEntriesPositions: CareerEntry[] = [
+export const careerEntriesPositions: CareerEntryItem[] = [
   {
     type: CareerEntryType.POSITION,
     title: 'Work Placement',
@@ -151,7 +151,7 @@ export const careerEntriesPositions: CareerEntry[] = [
   }
 ].sort((a, b) => b.startDate?.getTime() - a.startDate?.getTime());
 
-export const careerEntriesCertifications: CareerEntry[] = [
+export const careerEntriesCertifications: CareerEntryItem[] = [
   {
     type: CareerEntryType.CERTIFICATION,
     title: 'BSc in Computing (Honours)',
@@ -168,7 +168,7 @@ export const careerEntriesCertifications: CareerEntry[] = [
   },
 ].sort((a, b) => b.startDate?.getTime() - a.startDate?.getTime());
 
-export const careerEntries: CareerEntry[] = [
+export const careerEntries: CareerEntryItem[] = [
   ...careerEntriesEvents,
   ...careerEntriesPositions,
   ...careerEntriesCertifications,
