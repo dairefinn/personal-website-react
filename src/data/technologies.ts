@@ -25,7 +25,7 @@ export const technologyEntries: TechnologyItem[] = [
             },
             {
                 title: 'College',
-                description: 'Angular was the first front-end framework we learned in college.'
+                description: 'Angular was the first front-end framework we learned in college and we used React later. I used Expo in my third year project, a React framework for building mobile apps.'
             }
         ],
         tags: [TagEntry.FRAMEWORK, TagEntry.WEB_DEV, TagEntry.FRONT_END]
