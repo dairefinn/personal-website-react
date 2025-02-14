@@ -1,4 +1,4 @@
-# Personal Website in Vite
+# Personal Website in React using Vite
 
 A recreation of [my personal website](https://github.com/dairefinn/dairefinn.github.io) using the React framework and Vite server.
 
